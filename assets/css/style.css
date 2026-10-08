@@ -491,3 +491,24 @@ figure.step__art, figure.system__art { margin: 0; }
   .hero--radar .hero__visual { position: relative; right: auto; top: auto; width: min(100%, 520px); margin: 40px auto 8px; opacity: 1; }
   .hero--radar .hero__body { padding-bottom: 56px; }
 }
+
+/* ---------- Technology hero: MiniSAR flight video ---------- */
+.hero-video { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: var(--ink) url('../video/minisar-flight-poster.jpg') center / cover no-repeat; }
+.hero-video video { width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%; }
+.hero-video::after { content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(5, 18, 48, .3) 1px, transparent 1.3px),
+    linear-gradient(90deg, rgba(3, 104, 200, .94) 0%, rgba(3, 104, 200, .72) 34%, rgba(3, 104, 200, 0) 68%);
+  background-size: 4px 4px, auto; }
+.hero--video .frame { background: transparent; }
+.video-toggle { position: absolute; z-index: 3; right: var(--gutter); bottom: 32px; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px;
+  background: rgba(5, 18, 48, .75); color: var(--on-signal); border: 1px solid rgba(255, 255, 255, .5); font-size: 14px; font-weight: 500; cursor: pointer; transition: background .25s; }
+.video-toggle:hover { background: var(--ink); }
+.video-toggle::before { content: ''; width: 10px; height: 12px; border-left: 3px solid currentColor; border-right: 3px solid currentColor; box-sizing: border-box; }
+.video-toggle[aria-pressed="true"]::before { width: 0; height: 0; border: 0; border-left: 10px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+@media (max-width: 960px) {
+  .hero-video { bottom: 30%; -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 50%, transparent 100%); }
+  .hero-video video { object-position: 35% 50%; }
+  .hero-video::after { background-image: radial-gradient(rgba(5, 18, 48, .3) 1px, transparent 1.3px),
+    linear-gradient(180deg, rgba(3, 104, 200, 0) 40%, rgba(3, 104, 200, .7) 100%); }
+  .video-toggle { top: 68px; bottom: auto; right: 16px; height: 34px; padding: 0 12px; font-size: 13px; }
+}

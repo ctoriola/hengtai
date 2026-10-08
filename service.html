@@ -118,6 +118,22 @@
           "item": "https://hengtairaytech.com/service.html"
         }
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://hengtairaytech.com/service.html#minisar-flight",
+      "name": "MiniSAR drone flight at sea",
+      "description": "A MiniSAR-equipped drone flies beside a patrol ship and lands on its helipad.",
+      "thumbnailUrl": "https://hengtairaytech.com/assets/video/minisar-flight-poster.jpg",
+      "contentUrl": "https://hengtairaytech.com/assets/video/minisar-flight-1280.mp4",
+      "uploadDate": "2026-10-08",
+      "duration": "PT25S",
+      "publisher": {
+        "@id": "https://hengtairaytech.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://hengtairaytech.com/service.html#webpage"
+      }
     }
   ]
 }
@@ -151,24 +167,16 @@
 
 <main id="main">
   <!-- Hero -->
-  <section class="band band--signal hero hero--short" data-header="signal">
+  <section class="band band--signal hero hero--short hero--video" data-header="signal">
+    <div class="hero-video">
+      <video muted loop playsinline preload="none" poster="assets/video/minisar-flight-poster.jpg" width="1280" height="720" aria-label="MiniSAR-equipped drone flying beside a patrol ship and landing on its helipad">
+        <source src="assets/video/minisar-flight-720.mp4" type="video/mp4" media="(max-width: 960px)">
+        <source src="assets/video/minisar-flight-1280.webm" type="video/webm">
+        <source src="assets/video/minisar-flight-1280.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="frame">
-      <div class="hero__visual" aria-hidden="true">
-        <svg class="globe" viewBox="0 0 600 600" fill="none" stroke="#051230">
-          <circle cx="300" cy="300" r="250" fill="#2a80d4" stroke-width="2"/>
-          <circle cx="300" cy="300" r="190" stroke-width="1.5" stroke-dasharray="3 7"/>
-          <circle cx="300" cy="300" r="125" stroke-width="1.5"/>
-          <circle cx="300" cy="300" r="60" stroke-width="1.5" stroke-dasharray="3 7"/>
-          <path d="M50 300 H550 M300 50 V550" stroke-width="1" stroke-opacity=".5"/>
-          <g class="orbit">
-            <path d="M300 300 L300 50 A250 250 0 0 1 477 123 Z" fill="#051230" fill-opacity=".35" stroke="none"/>
-            <path d="M300 300 L300 50" stroke-width="2"/>
-          </g>
-          <circle cx="410" cy="200" r="8" fill="#051230"/>
-          <circle cx="210" cy="390" r="6" fill="#051230"/>
-          <circle cx="380" cy="420" r="5" fill="#051230"/>
-        </svg>
-      </div>
+      <button class="video-toggle" type="button" aria-pressed="false" hidden>Pause video</button>
       <div class="hero__body pad">
         <p class="eyebrow fade">Technology platform</p>
         <h1 class="display reveal">See. Know.<br>Act.</h1>

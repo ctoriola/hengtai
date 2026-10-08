@@ -119,3 +119,28 @@ if (word) {
   document.fonts?.ready.then(fitWord);
   addEventListener('resize', fitWord);
 }
+
+// Hero video: plays muted when motion and data use are welcome, pauses off-screen, and can be paused
+const heroVideo = document.querySelector('.hero-video video');
+const videoToggle = document.querySelector('.video-toggle');
+if (heroVideo) {
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.connection?.saveData;
+  let userPaused = Boolean(calm);
+  const label = () => {
+    videoToggle.setAttribute('aria-pressed', String(userPaused));
+    videoToggle.textContent = userPaused ? 'Play video' : 'Pause video';
+  };
+  const play = () => { heroVideo.preload = 'auto'; heroVideo.play().catch(() => {}); };
+  if (videoToggle) {
+    videoToggle.hidden = false;
+    label();
+    videoToggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      if (userPaused) heroVideo.pause(); else play();
+      label();
+    });
+  }
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !userPaused) play(); else heroVideo.pause();
+  }, { threshold: 0.2 }).observe(heroVideo);
+}

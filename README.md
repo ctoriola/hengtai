@@ -28,3 +28,4 @@ No build step is needed. Serve the folder with any static host, or run `python3 
   - `smartsat-smallsats.jpg`: small satellites released from the ISS (ISS033-E-009286). NASA
 - `assets/img/robotics/`: photos from the Hengtai Raytech brochure. `quadruped-fleet.jpg` is the page 13 field scene as a blue duotone; `x30.webp` and `m20.webp` are the page 14–15 product cut-outs.
 - `assets/img/about-satellite.jpg` and `about-satellite-960.jpg`: brochure cover satellite as a blue duotone (About hero, desktop and mobile crops).
+- `assets/video/`: MiniSAR flight footage (Technology hero) as a blue-graded, muted loop: 1280px WebM and MP4, a 720px MP4 for phones, and a poster frame. The top of the frame is cropped to remove the drone's on-screen telemetry (model, date and GPS position).

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://hengtairaytech.com/</loc>
     <lastmod>2026-10-08</lastmod>
@@ -11,6 +11,13 @@
     <image:image><image:loc>https://hengtairaytech.com/assets/img/robotics/quadruped-fleet.jpg</image:loc></image:image>
     <image:image><image:loc>https://hengtairaytech.com/assets/img/robotics/x30.webp</image:loc></image:image>
     <image:image><image:loc>https://hengtairaytech.com/assets/img/robotics/m20.webp</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://hengtairaytech.com/assets/video/minisar-flight-poster.jpg</video:thumbnail_loc>
+      <video:title>MiniSAR drone flight at sea</video:title>
+      <video:description>A MiniSAR-equipped drone flies beside a patrol ship and lands on its helipad.</video:description>
+      <video:content_loc>https://hengtairaytech.com/assets/video/minisar-flight-1280.mp4</video:content_loc>
+      <video:duration>25</video:duration>
+    </video:video>
   </url>
   <url>
     <loc>https://hengtairaytech.com/about.html</loc>
