@@ -6,6 +6,14 @@ Static site for [hengtairaytech.com](https://hengtairaytech.com). It uses the He
 - `assets/css/style.css`: all styles (colour tokens at the top)
 - `assets/js/main.js`: menu, scroll reveals, header tint, marquee and contact form (opens a prefilled email)
 
+## SEO
+
+- Each page's `<head>` has a unique title (≤60 characters) and description (≤160), a canonical URL on `https://hengtairaytech.com/`, Open Graph and Twitter tags, and JSON-LD structured data (Organization, WebSite, WebPage/AboutPage/ContactPage, BreadcrumbList; FAQPage on the home page, matching the visible FAQ).
+- `robots.txt`, `sitemap.xml` (update `<lastmod>` when pages change), `site.webmanifest`, app icons and a `404.html` (noindex) live at the root.
+- The social share image is `assets/img/og-image.jpg` (1200×630).
+- Fonts are self-hosted in `assets/fonts/` (SIL Open Font License) to avoid a render-blocking third-party request.
+- Configure the host to serve `404.html` for missing pages and to gzip/brotli HTML, CSS and JS.
+
 No build step is needed. Serve the folder with any static host, or run `python3 -m http.server` locally.
 
 ## Image credits

@@ -1,5 +1,9 @@
 /* Hengtai Raytech — sitewide styles */
 
+/* Self-hosted fonts (SIL Open Font License), Latin subset */
+@font-face { font-family: 'Stack Sans Notch'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../fonts/stack-sans-notch-latin.woff2') format('woff2'); }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 400 600; font-display: swap; src: url('../fonts/outfit-latin.woff2') format('woff2'); }
+
 :root {
   --ink: #051230;          /* deep navy */
   --signal: #0368c8;       /* Hengtai brand blue */
@@ -305,7 +309,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .footer { background: var(--ink); color: var(--accent); }
 .footer .frame { border-color: rgba(78, 163, 240, .35); background: var(--ink); }
 .footer__grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; padding: 72px var(--gutter) 56px; }
-.footer__grid h4 { font-family: var(--body); font-size: 14px; letter-spacing: 0; font-weight: 500; color: var(--blush); opacity: .7; margin-bottom: 16px; line-height: 1.2; }
+.footer__grid .footer__label { font-family: var(--body); font-size: 14px; letter-spacing: 0; font-weight: 500; color: var(--blush); opacity: .7; margin-bottom: 16px; line-height: 1.2; }
 .footer__grid a { display: block; font-weight: 500; margin-bottom: 10px; transition: color .2s; }
 .footer__grid a:hover { color: var(--blush); }
 .footer__tag { max-width: 300px; font-weight: 500; color: var(--blush); margin-top: 14px; }
