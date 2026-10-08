@@ -97,3 +97,25 @@ document.querySelector('#enquiry')?.addEventListener('submit', (event) => {
 });
 
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+// Footer wordmark fills the frame width on one line (two lines on phones, via CSS)
+const word = document.querySelector('.footer__word');
+const fitWord = () => {
+  if (!word) return;
+  word.style.fontSize = '';
+  if (!matchMedia('(min-width: 601px)').matches) return;
+  const styles = getComputedStyle(word);
+  const room = word.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+  const probe = document.createElement('span');
+  probe.textContent = word.textContent;
+  probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit;letter-spacing:inherit';
+  word.append(probe);
+  const size = parseFloat(styles.fontSize) * (room / probe.getBoundingClientRect().width);
+  probe.remove();
+  word.style.fontSize = `${Math.floor(size * 0.99)}px`;
+};
+if (word) {
+  fitWord();
+  document.fonts?.ready.then(fitWord);
+  addEventListener('resize', fitWord);
+}

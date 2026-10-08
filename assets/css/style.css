@@ -415,3 +415,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .band--signal :focus-visible, .site-header :focus-visible { outline-color: var(--on-signal); }
 .site-header[data-tone="blush"] :focus-visible { outline-color: var(--ink); }
 ::selection { background: var(--signal); color: var(--on-signal); }
+
+/* ---------- Logo ---------- */
+.brand__logo { height: 44px; width: auto; }
+.brand__logo--blue { display: none; }
+.site-header[data-tone="blush"] .brand__logo--white { display: none; }
+.site-header[data-tone="blush"] .brand__logo--blue { display: block; }
+.footer__grid a.brand--footer { display: inline-block; padding-left: 0; margin-bottom: 0; }
+.brand--footer .brand__logo { height: 84px; }
+
+/* Footer wordmark spans the frame */
+.footer__word { font-size: clamp(40px, 8.6vw, 124px); letter-spacing: -0.06em; line-height: 1.05; padding-top: 8px; padding-bottom: 4px; }
+@media (max-width: 600px) {
+  .footer__word { white-space: normal; font-size: 21vw; line-height: .86; }
+}
