@@ -446,3 +446,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
 @media (max-width: 960px) {
   .planet { --size: 130vw; left: calc(100% - var(--size) * .62); top: 70px; opacity: .85; }
 }
+
+/* ---------- Photo panels (mission steps, systems) ---------- */
+figure.step__art, figure.system__art { margin: 0; }
+.step__art--photo img, .system__art--photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.2s var(--ease); }
+.step__art--photo::before, .system__art--photo::before { z-index: 1; opacity: .55; }
+.step:hover .step__art--photo img, .system:hover .system__art--photo img { transform: scale(1); }
+.credit { position: absolute; z-index: 2; right: 10px; bottom: 8px; max-width: 70%; padding: 3px 8px; background: rgba(5, 18, 48, .7); color: var(--blush); font-size: 11px; font-weight: 500; line-height: 1.3; text-align: right; }
+@media (prefers-reduced-motion: reduce) { .step__art--photo img, .system__art--photo img { transform: none; transition: none; } }
