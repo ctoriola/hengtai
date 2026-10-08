@@ -1,6 +1,6 @@
 # Hengtai Raytech website
 
-Static site for [hengtairaytech.com](https://hengtairaytech.com). It uses a warm oxide-and-coral design language: a framed centre column, hatched gutters, numbered cards, sticky stacked panels and word-by-word heading reveals.
+Static site for [hengtairaytech.com](https://hengtairaytech.com). It uses the Hengtai brand blue (#0368c8) with navy and pale-blue tints in a framed design language: a framed centre column, hatched gutters, numbered cards, sticky stacked panels and word-by-word heading reveals.
 
 - `index.html`, `about.html`, `service.html`, `contact.html`: pages
 - `assets/css/style.css`: all styles (colour tokens at the top)
