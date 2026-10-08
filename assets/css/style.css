@@ -429,3 +429,20 @@ button, input, select, textarea { font: inherit; color: inherit; }
 @media (max-width: 600px) {
   .footer__word { white-space: normal; font-size: 21vw; line-height: .86; }
 }
+
+/* ---------- Home hero planet ---------- */
+.hero { position: relative; overflow: hidden; }
+.planet {
+  --size: min(128vh, 1250px);
+  position: absolute; z-index: 1; pointer-events: none;
+  width: var(--size); aspect-ratio: 1;
+  left: calc(100% - var(--size) * .64);
+  top: 15vh;
+}
+.planet__earth { position: absolute; inset: 5%; width: 90%; height: 90%; image-rendering: pixelated; }
+.planet__orbit { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.planet .orbit { transform-origin: 50% 50%; animation: spin 40s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .planet .orbit { animation: none; } }
+@media (max-width: 960px) {
+  .planet { --size: 130vw; left: calc(100% - var(--size) * .62); top: 70px; opacity: .85; }
+}

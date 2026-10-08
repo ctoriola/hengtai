@@ -7,3 +7,7 @@ Static site for [hengtairaytech.com](https://hengtairaytech.com). It uses the He
 - `assets/js/main.js`: menu, scroll reveals, header tint, marquee and contact form (opens a prefilled email)
 
 No build step is needed. Serve the folder with any static host, or run `python3 -m http.server` locally.
+
+## Image credits
+
+- `assets/img/earth.png`: dithered, blue-tinted treatment of NASA's "Blue Marble" Eastern Hemisphere image (NASA Goddard Space Flight Center, Reto Stöckli; public domain).
