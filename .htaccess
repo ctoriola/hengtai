@@ -1,0 +1,39 @@
+# Hengtai Raytech — Apache site configuration
+
+# ---------- Force HTTPS on the bare domain ----------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Any plain-HTTP request, or any request to www., goes to https://hengtairaytech.com
+  # with the same path and query string. X-Forwarded-Proto covers hosts that
+  # terminate TLS at a proxy or load balancer in front of Apache.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://hengtairaytech.com%{REQUEST_URI} [L,R=301,NE]
+
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://hengtairaytech.com%{REQUEST_URI} [L,R=301,NE]
+</IfModule>
+
+# ---------- Tell browsers to only ever use HTTPS (HSTS) ----------
+# Sent on HTTPS responses only. One year; subdomains are deliberately not
+# included while www. has no valid certificate.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+</IfModule>
+
+# ---------- Not-found page ----------
+ErrorDocument 404 /404.html
+
+# ---------- Compression ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml application/manifest+json image/svg+xml
+</IfModule>
+
+# ---------- File types ----------
+<IfModule mod_mime.c>
+  AddType video/webm .webm
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>

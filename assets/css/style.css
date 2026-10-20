@@ -445,7 +445,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .planet__earth { position: absolute; inset: 5%; width: 90%; height: 90%; image-rendering: pixelated; }
 .planet__orbit { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.planet .orbit { transform-origin: 50% 50%; animation: spin 40s linear infinite; }
+/* Satellite starts at 270° (9 o'clock, the visible side of the Earth) and orbits clockwise */
+.planet .orbit { transform-origin: 50% 50%; transform: rotate(270deg); animation: orbit-from-270 40s linear infinite; }
+@keyframes orbit-from-270 { from { transform: rotate(270deg); } to { transform: rotate(630deg); } }
 @media (prefers-reduced-motion: reduce) { .planet .orbit { animation: none; } }
 @media (max-width: 960px) {
   .planet { --size: 130vw; left: calc(100% - var(--size) * .62); top: 70px; opacity: .85; }
